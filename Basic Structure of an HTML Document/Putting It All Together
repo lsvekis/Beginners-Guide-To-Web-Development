@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Metadata and character encoding -->
+  <meta charset="UTF-8">
+  <title>My Structured HTML Page</title>
+  <meta name="description" content="A sample webpage demonstrating basic HTML structure">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- External stylesheet (optional) -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Main content goes here -->
+  <header>
+    <h1>Hello, HTML!</h1>
+  </header>
+  <main>
+    <p>This is a sample paragraph to show how the <strong>body</strong> section works.</p>
+  </main>
+  <footer>
+    <p>© 2025 Learning HTML</p>
+  </footer>
+</body>
+</html>
