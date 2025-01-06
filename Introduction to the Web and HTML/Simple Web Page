@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Demo</title>
+  <style>
+    /* CSS for presentation */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: #2d76bf;
+    }
+    button {
+      background-color: #2d76bf;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- HTML for structure -->
+  <h1>Welcome to the Web Demo</h1>
+  <p>Click the button below to see JavaScript in action.</p>
+  <button onclick="showMessage()">Click Me</button>
+  <script>
+    // JavaScript for behavior
+    function showMessage() {
+      alert("Hello from JavaScript!");
+    }
+  </script>
+</body>
+</html>
