@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Heading Example</title>
+</head>
+<body>
+  <h1>Main Title of the Page</h1>
+  <p>Introductory text goes here.</p>
+  <h2>Section One</h2>
+  <p>This paragraph describes Section One.</p>
+  <h3>Subsection of Section One</h3>
+  <p>More detailed information for the subsection.</p>
+  <h2>Section Two</h2>
+  <p>This paragraph describes Section Two.</p>
+</body>
+</html>
