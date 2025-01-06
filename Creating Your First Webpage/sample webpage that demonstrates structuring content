@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My First Webpage</title>
+</head>
+<body>
+  <h1>Welcome to My First Webpage</h1>
+  <p>
+    This is my first <em>official</em> webpage. I created it to learn how to
+    structure HTML and use some basic text formatting. Below is an important
+    announcement:
+  </p>
+  <p>
+    <strong>Don't forget:</strong> Consistency is key when learning web
+    development. Practice a little every day!
+  </p>
+  <p>
+    <u>Pro Tip:</u> Always save your file before refreshing the browser to see
+    the latest changes.
+  </p>
+</body>
+</html>
