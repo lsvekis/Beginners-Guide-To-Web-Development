@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 11: Embedding Content</title>
+  <style>
+    .embed-wrapper {
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    iframe, embed, object {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Embedding Demo</h1>
+  <!-- 1. Embedded YouTube video -->
+  <div class="embed-wrapper">
+    <h2>Embedded Video</h2>
+    <iframe 
+      src="https://www.youtube.com/embed/VIDEO_ID" 
+      allowfullscreen
+    ></iframe>
+  </div>
+  <!-- 2. Embedded PDF using <embed> -->
+  <div class="embed-wrapper">
+    <h2>Embedded PDF</h2>
+    <embed 
+      src="documents/sample.pdf" 
+      type="application/pdf"
+    >
+  </div>
+  <!-- 3. Embedded tweet using a <blockquote> -->
+  <div class="embed-wrapper">
+    <h2>Embedded Tweet</h2>
+    <blockquote class="twitter-tweet">
+      <p>Learning how to embed content in HTML is essential for modern web development! #webdev</p>
+      &mdash; Web Guru (@webguru) 
+      <a href="https://twitter.com/webguru/status/1234567890123456789">June 10, 2025</a>
+    </blockquote>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</body>
+</html>
