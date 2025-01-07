@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Example</title>
+  <!-- jQuery via CDN -->
+  <script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJ+..."
+    crossorigin="anonymous">
+  </script>
+</head>
+<body>
+  <button id="btn">Click Me</button>
+  <p id="text">Original text</p>
+  <script>
+    $(document).ready(function() {
+      $('#btn').on('click', function() {
+        $('#text').text('Text updated via jQuery!');
+      });
+    });
+  </script>
+</body>
+</html>
