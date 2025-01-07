@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>JS example</title>
+</head><body>
+  <div class="slider">
+    <div class="slide" style="display: block;">Slide 1 content</div>
+    <div class="slide" style="display: none;">Slide 2 content</div>
+    <div class="slide" style="display: none;">Slide 3 content</div>
+    <button id="prevBtn">Prev</button>
+    <button id="nextBtn">Next</button>
+  </div>  <script>
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentSlide = 0;
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'block' : 'none';
+      });
+    }
+    prevBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+    nextBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+    showSlide(currentSlide); // Initialize
+
+  </script>
+</body></html>
