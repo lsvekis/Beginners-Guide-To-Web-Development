@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maintainable HTML Demo</title>
+    <style>
+        /* This CSS is just for demonstration */
+        .highlight {
+            background-color: #f9f9a9;
+            padding: 5px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#docs">Docs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Main Content -->
+    <main>
+        <!-- Reusable highlight section -->
+        <section class="highlight">
+            <h2 id="intro">Introduction</h2>
+            <p>This section showcases a re-usable "highlight" style in HTML.</p>
+        </section>
+        <section class="highlight" id="docs">
+            <h2>Documentation</h2>
+            <p>Check out our <a href="docs.html">docs page</a> for more info.</p>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <!-- This is a small site, so a single footer is enough -->
+        <p>&copy; 2025 MySite Co.</p>
+    </footer>
+    <!-- Potential scripts go here -->
+    <script>
+        // If using jQuery or any library, it would be appended here
+        console.log('Page loaded and organized cleanly!');
+    </script>
+</body>
+</html>
