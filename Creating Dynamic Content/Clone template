@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <title>JS example</title>
+</head><body>
+  <template id="cardTemplate">
+    <div class="card">
+      <h3></h3>
+      <p></p>
+    </div>
+  </template>
+  <div id="cardContainer"></div><script>
+const template = document.getElementById('cardTemplate');
+const cardContainer = document.getElementById('cardContainer');
+function addCard(title, text) {
+  // Clone the template content
+  const cardClone = template.content.cloneNode(true);
+  // Fill in data
+  cardClone.querySelector('h3').textContent = title;
+  cardClone.querySelector('p').textContent = text;
+  // Append to container
+  cardContainer.appendChild(cardClone);
+}
+// Example usage:
+addCard('Card Title 1', 'Some descriptive text for card 1.');
+addCard('Card Title 2', 'Another piece of text for card 2.');
+  </script>
+</body></html>
