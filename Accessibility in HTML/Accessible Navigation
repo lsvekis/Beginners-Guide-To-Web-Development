@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Accessible Navigation Example</title>
+  <style>
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+    }
+    nav a:focus {
+      outline: 3px dashed #ff9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Company Inc.</h1>
+    <nav aria-label="Main menu">
+      <ul>
+        <li><a href="#home" aria-current="page">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+      <h2>Welcome to Company Inc.</h2>
+      <p>Our mission is to make the world accessible for everyone.</p>
+    </section>
+    <!-- More content... -->
+  </main>
+</body>
+</html>
