@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JS example</title>
+</head>
+
+<body>
+  <button id="openModalBtn">Open Modal</button>
+  <div id="myModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span id="closeModalBtn" class="close">&times;</span>
+      <h2>Modal Title</h2>
+      <p>Modal body text goes here.</p>
+    </div>
+  </div>
+
+
+  <script>
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const myModal = document.getElementById('myModal');
+    openModalBtn.addEventListener('click', () => {
+      myModal.style.display = 'block';
+    });
+    closeModalBtn.addEventListener('click', () => {
+      myModal.style.display = 'none';
+    });
+    // Close when user clicks outside the modal content
+    window.addEventListener('click', (e) => {
+      if (e.target === myModal) {
+        myModal.style.display = 'none';
+      }
+    });
+
+
+  </script>
+</body>
+
+</html>
