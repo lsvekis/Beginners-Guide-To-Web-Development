@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 6: Lists and Tables</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 8px 12px;
+    }
+    th {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <h1>List and Table Demo</h1>
+  <h2>Unordered Shopping List</h2>
+  <ul>
+    <li>Milk</li>
+    <li>Bread</li>
+    <li>Eggs</li>
+  </ul>
+  <h2>Ordered Steps for a Recipe</h2>
+  <ol>
+    <li>Gather ingredients.</li>
+    <li>Preheat oven to 375°F.</li>
+    <li>Mix ingredients.</li>
+    <li>Bake for 20 minutes.</li>
+  </ol>
+  <h2>Definition List: Key Terms</h2>
+  <dl>
+    <dt>API</dt>
+    <dd>An interface that allows communication between software components.</dd>
+    <dt>DOM</dt>
+    <dd>A programming interface for web documents.</dd>
+  </dl>
+  <h2>Simple Product Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>In Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pencils (Pack of 12)</td>
+        <td>$2.50</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Notebooks (Pack of 2)</td>
+        <td>$3.00</td>
+        <td>No</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
