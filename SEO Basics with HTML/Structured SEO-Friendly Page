@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Top 5 SEO Tips to Boost Your Rankings</title>
+  <meta name="description" content="Discover essential on-page SEO tips, from meta tags to content structuring, to improve your site's search rankings.">
+  <meta name="robots" content="index, follow">
+</head>
+<body>
+  <header>
+    <h1>Top 5 SEO Tips to Boost Your Rankings</h1>
+  </header>
+  <main>
+    <section>
+      <h2>1. Craft a Compelling Title Tag</h2>
+      <p>
+        Your title tag is often the first thing users see in search results. 
+        Keep it concise and incorporate your target keyword early.
+      </p>
+    </section>
+    <section>
+      <h2>2. Use Proper Headings and Hierarchy</h2>
+      <p>
+        Break content into logical sections with <strong>H1</strong>, <strong>H2</strong>, and <strong>H3</strong> headings. 
+        This approach helps both readers and search engines quickly navigate your content.
+      </p>
+    </section>
+    <section>
+      <h2>3. Write a Strong Meta Description</h2>
+      <p>
+        Summarize your page in 150 characters or less. Aim to entice users to click, 
+        as it can influence click-through rates.
+      </p>
+    </section>
+    <section>
+      <h2>4. Optimize Images and Media</h2>
+      <figure>
+        <img src="seo-checklist.png" alt="SEO checklist illustration" width="600">
+        <figcaption>An illustrative checklist of SEO tasks</figcaption>
+      </figure>
+      <p>
+        Use descriptive alt text and relevant filenames to help search engines understand your images.
+      </p>
+    </section>
+    <section>
+      <h2>5. Improve Your Internal Linking</h2>
+      <p>
+        Reference related articles or pages within your site. 
+        This tactic helps search engines crawl your content and signals topic relevance.
+      </p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 SEO Blog</p>
+  </footer>
+</body>
+</html>
