@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic List Example</title>
+</head>
+<body>
+  <ul id="todoList">
+    <li>Buy groceries</li>
+  </ul>
+  <input type="text" id="todoInput" placeholder="New item">
+  <button id="addBtn">Add</button>
+  <button id="removeBtn">Remove Last</button>
+  <script>
+    const todoList = document.getElementById('todoList');
+    const todoInput = document.getElementById('todoInput');
+    const addBtn = document.getElementById('addBtn');
+    const removeBtn = document.getElementById('removeBtn');
+    addBtn.addEventListener('click', () => {
+      const newItemText = todoInput.value.trim();
+      if (newItemText !== '') {
+        const li = document.createElement('li');
+        li.textContent = newItemText;
+        todoList.appendChild(li);
+        todoInput.value = '';
+      }
+    });
+    removeBtn.addEventListener('click', () => {
+      if (todoList.lastElementChild) {
+        todoList.removeChild(todoList.lastElementChild);
+      }
+    });
+  </script>
+</body>
+</html>
