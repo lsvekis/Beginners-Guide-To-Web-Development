@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 7 Demo</title>
+  <style>
+    figure {
+      max-width: 400px;
+      margin: 20px 0;
+    }
+    figcaption {
+      font-style: italic;
+      text-align: center;
+      margin-top: 5px;
+    }
+    video, audio {
+      display: block;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Multimedia Demo</h1>
+  <!-- Image in a figure -->
+  <figure>
+    <img src="images/beach.png" alt="Beach at sunrise" width="400">
+    <figcaption>A tranquil beach at sunrise</figcaption>
+  </figure>
+  <!-- Video with controls -->
+  <video controls width="400">
+    <source src="videos/sample.mp4" type="video/mp4">
+    <source src="videos/sample.ogg" type="video/ogg">
+    Your browser does not support the video tag.
+  </video>
+  <!-- Audio with controls -->
+  <audio controls>
+    <source src="audio/music.mp3" type="audio/mpeg">
+    <source src="audio/music.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+  </audio>
+</body>
+</html>
