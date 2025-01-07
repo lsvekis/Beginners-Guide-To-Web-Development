@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Animation Example</title>
+  <style>
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #4a90e2;
+      animation: fadeIn 2s ease-in-out 1s 1 forwards;
+      /* 
+        Explanation:
+        fadeIn = animation name
+        2s = duration
+        ease-in-out = timing function
+        1s = delay
+        1 = iteration count
+        forwards = animation-fill-mode (keeps final state)
+      */
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
