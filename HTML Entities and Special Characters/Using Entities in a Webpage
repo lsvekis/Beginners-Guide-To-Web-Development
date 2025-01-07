@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 12: HTML Entities Demo</title>
+</head>
+<body>
+  <h1>Common HTML Entities</h1>
+  <p>Here are some frequently used characters:</p>
+  <ul>
+    <li>&quot;Double Quotes&quot; (Entity: &amp;quot;)</li>
+    <li>&apos;Single Quotes&apos; (Entity: &amp;apos; or &amp;rsquo; / &amp;lsquo;)</li>
+    <li>&lt;Less Than&gt; (Entities: &amp;lt; &amp; &amp;gt;)</li>
+    <li>&copy; 2025 MySite (Entity: &amp;copy;)</li>
+    <li>&hearts; symbol for a heart (Entity: &amp;hearts;)</li>
+  </ul>
+  <h2>Unicode &amp; Accents</h2>
+  <p>Characters with accents or special marks:</p>
+  <ul>
+    <li>&eacute; (é) – Spanish/French “e” with an acute accent.</li>
+    <li>&ntilde; (ñ) – Spanish letter “enye.”</li>
+    <li>&ouml; (ö) – Used in German, Swedish, etc.</li>
+  </ul>
+  <p>
+    Using HTML entities makes it easier to ensure characters display
+    correctly across different browsers and devices, especially if you 
+    can’t rely on the document’s character encoding or if you’re typing 
+    from a keyboard missing certain symbols.
+  </p>
+</body>
+</html>
