@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS and HTML Demo</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the Interactive Page</h1>
+  <p id="message">Hello, guest!</p>
+  <input type="text" id="username" placeholder="Type your name">
+  <button id="submitBtn">Update Name</button>
+  <button id="highlightBtn">Highlight Text</button>
+  <script>
+    const messagePara = document.getElementById('message');
+    const usernameInput = document.getElementById('username');
+    const submitBtn = document.getElementById('submitBtn');
+    const highlightBtn = document.getElementById('highlightBtn');
+    // Update the paragraph text based on input
+    submitBtn.addEventListener('click', () => {
+      const name = usernameInput.value.trim();
+      if (name) {
+        messagePara.textContent = `Hello, ${name}!`;
+      } else {
+        messagePara.textContent = 'Hello, guest!';
+      }
+    });
+    // Toggle highlight class
+    highlightBtn.addEventListener('click', () => {
+      messagePara.classList.toggle('highlight');
+    });
+  </script>
+</body>
+</html>
