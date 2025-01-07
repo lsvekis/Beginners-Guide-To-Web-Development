@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Transition Example</title>
+  <style>
+    .button {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      display: inline-block;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #4a90e2; /* Smoothly transitions from #333 to #4a90e2 */
+    }
+  </style>
+</head>
+<body>
+  <a href="#" class="button">Hover Me</a>
+</body>
+</html>
