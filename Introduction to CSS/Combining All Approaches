@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Introduction to CSS</title>
+  <!-- Inline styles for demonstration (not recommended in production) -->
+  <style>
+    /* Internal CSS */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+  <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
+</head>
+<body>
+  <h1 style="color: blue;">Welcome to CSS Basics</h1> <!-- Inline CSS -->
+  <p>This paragraph is styled by <strong>external CSS</strong> from styles.css.</p>
+  <p class="highlight">This paragraph uses a <strong>class</strong> to highlight text.</p>
+  <div id="special-section">
+    <p>This paragraph is inside a div with ID <code>special-section</code>.</p>
+  </div>
+</body>
+</html>
