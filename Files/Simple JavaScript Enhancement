@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Jane Developer</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Front-end developer with a passion for accessible design.</p>
+    </section>
+    <section id="projects">
+      <h2>My Projects</h2>
+      <article>
+        <h3>Project Alpha</h3>
+        <p>Brief description or screenshot link.</p>
+      </article>
+      <article>
+        <h3>Project Beta</h3>
+        <p>Another project example.</p>
+      </article>
+    </section>
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <p>Email me at <a href="mailto:jane@example.com">jane@example.com</a></p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Jane Developer</p>
+  </footer>
+  <script>
+    // Smooth scrolling effect
+    document.querySelectorAll('nav a').forEach((link) => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').slice(1);
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
