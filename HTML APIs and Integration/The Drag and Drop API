@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drag and Drop Example</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      border: 2px dashed #333;
+      display: inline-block;
+      margin-right: 20px;
+      vertical-align: top;
+    }
+    #draggableItem {
+      width: 100px;
+      height: 100px;
+      background-color: lightgreen;
+      cursor: move;
+    }
+  </style>
+</head>
+<body>
+  <div id="draggableItem" draggable="true">Drag me</div>
+  <div class="box" id="dropZone">Drop Here</div>
+  <script>
+    const dragItem = document.getElementById('draggableItem');
+    const dropZone = document.getElementById('dropZone');
+    // Drag start: set data or visual cues
+    dragItem.addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('text/plain', 'Dragged Item');
+    });
+    // Drag over: allow drop
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault(); // Must prevent default to allow drop
+    });
+    // Drop: handle data or move item
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const data = e.dataTransfer.getData('text/plain');
+      dropZone.textContent = `You dropped: ${data}`;
+    });
+  </script>
+</body>
+</html>
