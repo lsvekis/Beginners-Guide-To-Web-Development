@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JS example</title>
+</head>
+
+<body>
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="tab1">Tab 1</button>
+    <button class="tab-btn" data-tab="tab2">Tab 2</button>
+  </div>
+  <div class="tab-content" id="tab1">Content for Tab 1</div>
+  <div class="tab-content" id="tab2" style="display: none;">Content for Tab 2</div>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        // Remove 'active' from all buttons
+        tabButtons.forEach((b) => b.classList.remove('active'));
+        // Hide all tab contents
+        tabContents.forEach((tc) => (tc.style.display = 'none'));
+        // Activate clicked button
+        btn.classList.add('active');
+        // Show related tab content
+        const target = btn.dataset.tab;
+        document.getElementById(target).style.display = 'block';
+      });
+    });
+
+  </script>
+</body>
+
+</html>
