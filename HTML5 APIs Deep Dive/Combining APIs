@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas + Geolocation + Web Storage</title>
+  <style>
+    #mapCanvas {
+      border: 1px solid #000;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button id="geoBtn">Show My Location on Canvas</button>
+  <canvas id="mapCanvas" width="400" height="300"></canvas>
+  <p id="info"></p>
+  <script>
+    const geoBtn = document.getElementById('geoBtn');
+    const mapCanvas = document.getElementById('mapCanvas');
+    const infoP = document.getElementById('info');
+    const ctx = mapCanvas.getContext('2d');
+    // Load previous location if available
+    let savedLat = localStorage.getItem('lat');
+    let savedLong = localStorage.getItem('long');
+    if (savedLat && savedLong) {
+      infoP.textContent = `Previously saved location: Lat ${savedLat}, Long ${savedLong}`;
+    }
+    geoBtn.addEventListener('click', () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            const { latitude, longitude } = pos.coords;
+            // Save location in localStorage
+            localStorage.setItem('lat', latitude);
+            localStorage.setItem('long', longitude);
+            infoP.textContent = `Current position: Lat ${latitude}, Long ${longitude}`;
+            drawPointOnCanvas(latitude, longitude);
+          },
+          (err) => {
+            infoP.textContent = `Error: ${err.message}`;
+          }
+        );
+      } else {
+        infoP.textContent = 'Geolocation not supported.';
+      }
+    });
+    function drawPointOnCanvas(lat, long) {
+      // Clear canvas
+      ctx.clearRect(0, 0, mapCanvas.width, mapCanvas.height);
+      // For illustration, just map lat/long to x/y (not real map projection!)
+      const x = (long + 180) * (mapCanvas.width / 360);
+      const y = (-(lat) + 90) * (mapCanvas.height / 180);
+      // Draw a circle representing the "location"
+      ctx.beginPath();
+      ctx.arc(x, y, 10, 0, 2 * Math.PI);
+      ctx.fillStyle = 'red';
+      ctx.fill();
+    }
+  </script>
+</body>
+</html>
