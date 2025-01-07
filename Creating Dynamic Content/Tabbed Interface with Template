@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Tabs and Template Example</title>
+  <style>
+    .tabs { margin-bottom: 1rem; }
+    .tab-btn { padding: 8px 12px; border: 1px solid #ccc; cursor: pointer; margin-right: 5px; }
+    .tab-btn.active { background-color: #f0f0f0; }
+    .tab-content { display: none; margin-top: 10px; border: 1px solid #ccc; padding: 10px; }
+  </style>
+</head>
+<body>
+  <div class="tabs" id="tabsContainer"></div>
+  <div id="contentsContainer"></div>
+  <!-- Template for a tab button -->
+  <template id="tabTemplate">
+    <button class="tab-btn"></button>
+  </template>
+  <!-- Template for tab content -->
+  <template id="contentTemplate">
+    <div class="tab-content"></div>
+  </template>
+  <script>
+    const tabsData = [
+      { title: 'Overview', content: 'Welcome to the overview section.' },
+      { title: 'Features', content: 'Here are some great features...' },
+      { title: 'Pricing', content: 'Check out our affordable plans!' }
+    ];
+    const tabsContainer = document.getElementById('tabsContainer');
+    const contentsContainer = document.getElementById('contentsContainer');
+    const tabTemplate = document.getElementById('tabTemplate');
+    const contentTemplate = document.getElementById('contentTemplate');
+    let currentActiveIndex = 0;
+    tabsData.forEach((tab, index) => {
+      // Clone tab button
+      const tabClone = tabTemplate.content.cloneNode(true);
+      const buttonEl = tabClone.querySelector('.tab-btn');
+      buttonEl.textContent = tab.title;
+      // Clone content
+      const contentClone = contentTemplate.content.cloneNode(true);
+      const contentEl = contentClone.querySelector('.tab-content');
+      contentEl.textContent = tab.content;
+      // Append to containers
+      tabsContainer.appendChild(buttonEl);
+      contentsContainer.appendChild(contentEl);
+      // Set up click event
+      buttonEl.addEventListener('click', () => {
+        setActiveTab(index);
+      });
+    });
+    // Show/hide tabs
+    function setActiveTab(index) {
+      // Deactivate previous
+      const allTabButtons = document.querySelectorAll('.tab-btn');
+      const allContents = document.querySelectorAll('.tab-content');
+      allTabButtons.forEach((btn, i) => {
+        btn.classList.remove('active');
+        allContents[i].style.display = 'none';
+      });
+      // Activate selected
+      allTabButtons[index].classList.add('active');
+      allContents[index].style.display = 'block';
+      currentActiveIndex = index;
+    }
+    // Initialize the first tab
+    setActiveTab(currentActiveIndex);
+  </script>
+</body>
+</html>
