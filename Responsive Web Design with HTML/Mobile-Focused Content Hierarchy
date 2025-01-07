@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport" 
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Responsive Layout Example</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+      max-width: 800px; 
+      margin: 0 auto; /* centers content on larger screens */
+    }
+    img {
+      max-width: 100%; 
+      height: auto; 
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Responsive Page</h1>
+  </header>
+  <main>
+    <h2>Welcome!</h2>
+    <p>
+      This is a mobile-friendly layout thanks to fluid widths, 
+      the meta viewport tag, and sensible CSS. 
+    </p>
+    <img src="images/responsive-design.png" alt="Responsive Design Illustration">
+  </main>
+</body>
+</html>
