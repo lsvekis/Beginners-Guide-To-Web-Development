@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic HTML5 Demo</title>
+ <style>
+    header, nav, main, section, article, aside, footer {
+      display: block;
+      margin: 20px auto;
+      max-width: 800px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    header, footer {
+      background-color: #f4f4f4;
+    }
+    nav {
+      background-color: #efefef;
+    }
+    aside {
+      float: right;
+      width: 200px;
+      border: 1px solid #ddd;
+      margin-left: 10px;
+    }
+    section {
+      margin-right: 220px; /* Space for aside */
+      overflow: hidden; /* Clears floated content */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Awesome Blog</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="archive.html">Archive</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <aside>
+      <h3>Popular Topics</h3>
+      <ul>
+        <li><a href="#css">CSS Tips</a></li>
+        <li><a href="#javascript">JavaScript Tricks</a></li>
+        <li><a href="#uxdesign">UX Design</a></li>
+      </ul>
+    </aside>
+    <section>
+      <article>
+        <header>
+          <h2>Understanding Semantic HTML5</h2>
+          <p>Posted on August 15, 2025 by Jane Doe</p>
+        </header>
+        <p>
+          Semantic HTML5 introduces more meaningful elements that make our 
+          webpages more organized, accessible, and SEO-friendly. Whether 
+          you’re building a blog, e-commerce site, or portfolio, using these 
+          elements is essential.
+        </p>
+        <footer>
+          <p>Tags: <a href="#html5">HTML5</a>, <a href="#semantics">Semantics</a></p>
+        </footer>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 My Awesome Blog | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
