@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX Form Submission</title>
+</head>
+<body>
+  <form id="ajaxForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age">
+    <button type="submit">Submit</button>
+  </form>
+  <div id="result"></div>
+  <script>
+    const ajaxForm = document.getElementById('ajaxForm');
+    const resultDiv = document.getElementById('result');
+    ajaxForm.addEventListener('submit', (e) => {
+      e.preventDefault(); // Stop normal submission
+      // Gather form data
+      const formData = new FormData(ajaxForm);
+      // Convert to a simple object
+      const dataObj = {};
+      formData.forEach((value, key) => (dataObj[key] = value));
+      // Send data as JSON
+      fetch('https://example.com/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dataObj)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Handle success: e.g., display message
+        resultDiv.textContent = `Server says: ${data.message}`;
+      })
+      .catch(error => {
+        resultDiv.textContent = `Error: ${error.message}`;
+      });
+    });
+  </script>
+</body>
+</html>
