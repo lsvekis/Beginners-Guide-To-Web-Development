@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas Basics</title>
+  <style>
+    #myCanvas {
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="400" height="300"></canvas>
+  <script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    // Draw a rectangle
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(20, 20, 100, 60);
+    // Draw a line
+    ctx.beginPath();
+    ctx.moveTo(150, 30);
+    ctx.lineTo(250, 80);
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    // Draw a circle
+    ctx.beginPath();
+    ctx.arc(300, 60, 40, 0, Math.PI * 2); // (x, y, radius, startAngle, endAngle)
+    ctx.fillStyle = 'green';
+    ctx.fill();
+    // Draw text
+    ctx.font = '20px Arial';
+    ctx.fillStyle = 'black';
+    ctx.fillText('Canvas Demo', 20, 120);
+  </script>
+</body>
+</html>
