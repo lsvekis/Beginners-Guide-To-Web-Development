@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lazy Loading Demo</title>
+</head>
+<body>
+  <h1>Scroll Down to Load Images</h1>
+  <div style="height: 800px;">
+    <p>Placeholder content... keep scrolling!</p>
+  </div>
+  <img 
+    src="placeholder.jpg" 
+    data-src="large-photo.jpg" 
+    alt="Large" 
+    class="lazy"
+    width="600"
+    height="400"
+  >
+  <script>
+    // Basic JS lazy loading (for older browsers)
+    document.addEventListener('DOMContentLoaded', function() {
+      const lazyImages = document.querySelectorAll('.lazy');
+      const onIntersect = (entries, observer) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            observer.unobserve(img);
+          }
+        });
+      };
+      const observer = new IntersectionObserver(onIntersect);
+      lazyImages.forEach(img => observer.observe(img));
+    });
+  </script>
+</body>
+</html>
