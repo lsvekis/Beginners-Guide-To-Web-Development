@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas Example</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="400" height="300" style="border:1px solid #000;"></canvas>
+  <script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+    // Set color and draw a rectangle
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(20, 20, 150, 100);
+    // Draw a line
+    ctx.beginPath();
+    ctx.moveTo(200, 20);
+    ctx.lineTo(300, 100);
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+  </script>
+</body>
+</html>
