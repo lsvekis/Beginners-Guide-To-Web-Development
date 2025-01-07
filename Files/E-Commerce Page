@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>E-Commerce Product</title>
+  <style>
+    .product-page { display: flex; gap: 20px; }
+    .product-images img { display: block; max-width: 100%; }
+    .thumbnails img { width: 60px; margin: 5px; cursor: pointer; }
+    .product-info { max-width: 400px; }
+    .price { color: #c33; font-size: 1.4rem; }
+  </style>
+</head>
+<body>
+<main class="product-page">
+  <div class="product-images">
+    <img src="main-gadget.jpg" alt="Main Gadget" id="mainImg">
+    <div class="thumbnails">
+      <img src="thumb1.jpg" alt="Thumbnail 1">
+      <img src="thumb2.jpg" alt="Thumbnail 2">
+    </div>
+  </div>
+  <div class="product-info">
+    <h1>Super Gadget 3000</h1>
+    <p class="price">$59.99</p>
+    <p>An amazing gadget that solves multiple tasks efficiently.</p>
+    <form id="addCartForm">
+      <label>Quantity:
+        <input type="number" name="qty" min="1" value="1">
+      </label>
+      <button type="submit">Add to Cart</button>
+    </form>
+  </div>
+</main>
+<script>
+  // Switch main image on thumbnail click
+  const mainImg = document.getElementById('mainImg');
+  document.querySelectorAll('.thumbnails img').forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      mainImg.src = thumb.src;
+    });
+  });
+  // Basic "add to cart" localStorage approach
+  const addCartForm = document.getElementById('addCartForm');
+  addCartForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(addCartForm);
+    const qty = parseInt(formData.get('qty'), 10) || 1;
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ productId: 'super-gadget-3000', quantity: qty });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`Added ${qty} to cart!`);
+  });
+</script>
+</body>
+</html>
