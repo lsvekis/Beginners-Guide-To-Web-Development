@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fast and Responsive Landing</title>
+  <meta name="description" content="Landing page for our awesome product">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Grid for main sections */
+    .grid-container {
+      display: grid;
+      grid-template-rows: auto auto;
+      /* for a simple 1-col layout on mobile */
+    }
+    /* Media query for larger screens */
+    @media (min-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+    }
+    header, .hero, .features, footer {
+      padding: 20px;
+    }
+    .hero {
+      background-color: #f0f0f0;
+    }
+    .features {
+      display: flex;
+      flex-direction: column;
+    }
+    @media (min-width: 768px) {
+      .features {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      .feature-box {
+        width: 30%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <header>
+      <h1>Awesome Product</h1>
+      <nav>
+        <a href="#features">Features</a> |
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <section class="hero">
+      <h2>Welcome to Our Landing Page</h2>
+      <p>Discover the next big thing in tech!</p>
+    </section>
+    <section class="features" id="features">
+      <div class="feature-box">
+        <h3>Feature One</h3>
+        <p>Short description.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Feature Two</h3>
+        <p>Another highlight.</p>
+      </div>
+    </section>
+    <footer id="contact">
+      <p>Contact us at <a href="mailto:info@awesome.com">info@awesome.com</a></p>
+      <p>&copy; 2025 Awesome Inc.</p>
+    </footer>
+  </div>
+</body>
+</html>
