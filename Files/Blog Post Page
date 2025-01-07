@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Blog - Post Example</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 700px; margin: 0 auto; padding: 20px; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; }
+    nav a { text-decoration: none; color: #333; }
+    .comment { background: #f9f9f9; margin: 5px 0; padding: 8px; }
+  </style>
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="category-html.html">HTML</a></li>
+    <li><a href="category-css.html">CSS</a></li>
+  </ul>
+</nav>
+<article class="blog-post">
+  <header>
+    <h2>Understanding the Box Model</h2>
+    <p class="byline">By Jane Dev | Jan 10, 2026</p>
+  </header>
+  <section>
+    <p>The CSS box model is a fundamental concept... (post content)</p>
+  </section>
+</article>
+<section id="comments">
+  <h3>Comments</h3>
+  <!-- Existing comments could be here -->
+  <form id="commentForm">
+    <label>Name: <input type="text" name="name" required></label><br><br>
+    <label>Comment: <textarea name="comment" rows="3" required></textarea></label><br><br>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+<script>
+  const form = document.getElementById('commentForm');
+  const commentsSection = document.getElementById('comments');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const name = formData.get('name');
+    const text = formData.get('comment');
+    const newComment = document.createElement('article');
+    newComment.className = 'comment';
+    newComment.innerHTML = `<p><strong>${name}:</strong> ${text}</p>`;
+    commentsSection.appendChild(newComment);
+    form.reset();
+  });
+</script>
+</body>
+</html>
