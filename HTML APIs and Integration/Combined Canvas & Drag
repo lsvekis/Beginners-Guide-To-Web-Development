@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas Drag Demo</title>
+  <style>
+    #myCanvas {
+      border: 1px solid #aaa;
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="300"></canvas>
+<script>
+  const canvas = document.getElementById('myCanvas');
+  const ctx = canvas.getContext('2d');
+  let shapeX = 50;
+  let shapeY = 50;
+  const shapeSize = 30;
+  let isDragging = false;
+  // Initial draw
+  drawShape();
+  // Listen for mouse events on the canvas
+  canvas.addEventListener('mousedown', (e) => {
+    // Check if mouse is over the shape
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    if (mouseX >= shapeX && mouseX <= shapeX + shapeSize &&
+        mouseY >= shapeY && mouseY <= shapeY + shapeSize) {
+      isDragging = true;
+    }
+  });
+  canvas.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      const rect = canvas.getBoundingClientRect();
+      shapeX = e.clientX - rect.left - shapeSize / 2;
+      shapeY = e.clientY - rect.top - shapeSize / 2;
+      redraw();
+    }
+  });
+  canvas.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+  function drawShape() {
+    ctx.fillStyle = 'green';
+    ctx.fillRect(shapeX, shapeY, shapeSize, shapeSize);
+  }
+  function redraw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawShape();
+  }
+</script>
+</body>
+</html>
