@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic HTML Example</title>
+  <style>
+    .important-note {
+      border: 2px solid #f00;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    .special-word {
+      font-style: italic;
+      background-color: #ffffcc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Semantic HTML Page</h1>
+  </header>
+  <main>
+    <article>
+      <h2>The Value of Semantics</h2>
+      <p>
+        In web development, using semantic elements enhances both
+        <em>clarity</em> and <strong>accessibility</strong>.
+      </p>
+    </article>
+    <div class="important-note">
+      <p>
+        Here’s an <span class="special-word">important</span> note: Always
+        structure your content thoughtfully.
+      </p>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 WebDev</p>
+  </footer>
+</body>
+</html>
