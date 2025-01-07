@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Validation + AJAX Demo</title>
+  <style>
+    .error { border: 2px solid red; }
+    .feedback { color: red; }
+  </style>
+</head>
+<body>
+  <form id="signupForm">
+    <label>Email:
+      <input type="text" id="email" name="email">
+    </label>
+    <div id="emailFeedback" class="feedback"></div>
+    <label>Password:
+      <input type="password" id="password" name="password">
+    </label>
+    <div id="pwdFeedback" class="feedback"></div>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="serverResponse"></div>
+  <script>
+    const signupForm = document.getElementById('signupForm');
+    const emailInput = document.getElementById('email');
+    const emailFeedback = document.getElementById('emailFeedback');
+    const passwordInput = document.getElementById('password');
+    const pwdFeedback = document.getElementById('pwdFeedback');
+    const serverResponseDiv = document.getElementById('serverResponse');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Real-time email validation
+    emailInput.addEventListener('input', () => {
+      const emailVal = emailInput.value.trim();
+      if (!emailPattern.test(emailVal)) {
+        emailInput.classList.add('error');
+        emailFeedback.textContent = 'Invalid email format';
+      } else {
+        emailInput.classList.remove('error');
+        emailFeedback.textContent = '';
+      }
+    });
+    // Simple password check (length > 5)
+    passwordInput.addEventListener('input', () => {
+      if (passwordInput.value.length < 6) {
+        passwordInput.classList.add('error');
+        pwdFeedback.textContent = 'Password must be at least 6 characters.';
+      } else {
+        passwordInput.classList.remove('error');
+        pwdFeedback.textContent = '';
+      }
+    });
+    // AJAX form submission
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Final check before submission
+      if (emailInput.classList.contains('error') || passwordInput.classList.contains('error')) {
+        alert('Please fix errors before submitting.');
+        return;
+      }
+      const formDataObj = {
+        email: emailInput.value,
+        password: passwordInput.value
+      };
+      fetch('https://example.com/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formDataObj)
+      })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Server returned an error.');
+        }
+        return res.json();
+      })
+      .then(data => {
+        serverResponseDiv.textContent = `Success: ${data.message}`;
+      })
+      .catch(err => {
+        serverResponseDiv.textContent = `Error: ${err.message}`;
+      });
+    });
+  </script>
+</body>
+</html>
